@@ -1,0 +1,20 @@
+.login-admin > body {
+  margin-bottom: 10vh;
+}
+
+.retangu3{
+  background-color: #074A71;
+  line-height: 0px;
+  width: 100%;
+  border: 25px solid #074A71;
+  margin-bottom: 2em;
+}
+
+.retangu3 > a {
+  color: white;
+}
+
+.senha-adm{
+  margin-top: 1.5rem;
+}
+

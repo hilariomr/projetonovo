@@ -1,0 +1,58 @@
+.cardlista {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cardlista.card {
+    width: 50rem;
+    height: 40rem;
+    margin: 90px auto 30px 500px;
+    border-radius: 4px;
+    border-color: #FF0000;
+    border-width: 2px 2px 22px 2px;
+}
+
+.cardlista h3 {
+    margin: 40px 0 0 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cardlista h4 {
+    margin: 10px 0 10px 16px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-body {
+    display: flex;
+}
+
+.btn.btn-primary {
+    width: 120px;
+    height: 30px;
+    color: white;
+    background-color: #FF0000;
+    border-radius: 4px;
+    border: #FF0000;
+    position: absolute;
+    margin: 20px 0 0 650px;
+    font-weight: bold;
+}
+
+.itenslista {
+    font-family: 'Montserrat', sans-serif;
+    font-style: bolder;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000000;
+    padding: 10px 17px;
+    font-weight: bold;
+    font-size: 14px;
+}

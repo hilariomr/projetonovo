@@ -1,0 +1,47 @@
+.card {
+  width: 20rem;
+  height: 20rem;
+  left: 542px;
+  top: 823px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  box-shadow: 3px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.cardempresa{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.card h3 {
+  font-family: Montserrat;
+  font-style: bolder;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 35 px;
+  text-align: center;
+  color: #FF0000;
+}
+
+.card p {
+  font-family: Montserrat;
+  font-style: bolder;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #000000;
+  padding: 10px 20px;
+}
+
+.card img {
+  width: 80px;
+  height: 70px;  
+  margin: 2rem 7.5rem;
+}

@@ -1,0 +1,95 @@
+.admin > body{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.admin > main{
+    justify-content: center;
+    align-self: center;
+    height: 300px;
+    align-items: center;
+}
+
+.meio {
+    margin: 0 6rem;
+}
+
+#lista-adm {
+    margin: 0 6rem;
+}
+
+
+
+
+#painel {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+
+.meio >h2 {
+    font-size: 1.8em;
+    padding-bottom: 30px;
+}
+
+.meio h3 {
+    padding: 0.5em 0;
+    font-size: 25px;
+    color: #361a0c;
+    font-weight: 500;
+    
+}
+
+.admin h4 {
+    font-size: 19px;
+}
+
+
+
+#lista-adm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+}
+
+#lista-adm  table {
+    text-align: center;
+    color: #000000;
+    border: 1px solid #ff9933;
+    width: 100%;
+    height: 280px;
+    padding: 4px;
+    word-break: normal;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.admin  table th {
+    height: 30px;
+    background-color:#FFC600;
+    color: #7000a3;
+    
+}
+
+
+.admin  table a {
+    text-decoration: none;
+    color: #FFC600;
+    
+}
+
+.admin  table a:hover {
+    text-decoration: underline;
+    
+}
+
+.admin tfoot td {
+    text-align: center;
+    color: #7000a3;
+    background-color: #FFC600;
+    height: 30px;
+}
+
+.admin  thead > tr:first-child > th:last-child {
+    
+}

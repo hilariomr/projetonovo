@@ -1,0 +1,1099 @@
+
+
+//   function cadastrar(event) {
+//     event.preventDefault();
+
+//     let campos = event.target.elements;
+//     let idDadoCandidato = localStorage.getItem("identificador-usuario")
+//     let dados = getDados(campos, idDadoCandidato)
+
+//     enviarDados(dados);
+//     event.target.reset();
+// }
+
+// function getDados(campos, idDadoCandidato) {
+//     return {
+//         "TipoCarreira": campos.carreira.value,
+//         "PretencaoSalarial": campos.salario.value,
+//         "ModeloContratacao": campos.contratacao.value,
+//         "TipoTrabalho": campos.trabalho.value,
+//         "Curriculo": campos.curriculo.value,
+//         "NomeCompleto": campos.nome.value,
+//         "LinkLinkedin": campos.linkedin.value,
+//         "LinkGit": campos.git.value,
+//         "LinkPortifolio": campos.portifolio.value,
+//         "Foto": campos.foto.value,
+//         "Telefone": campos.telefone.value,
+//         "idCandidato": idDadoCandidato,
+//         "idEndereco": "4"
+//     }
+// }
+
+// function enviarDados(dados) {
+//     let token = localStorage.getItem("token-usuario")
+
+//     let info = {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'authorization': 'bearer ' + token
+//         },
+//         body: JSON.stringify(dados)
+//     }
+
+//     fetch("http://localhost:5000/api/DadoCandidato", info)
+//         .then(response => {
+//             if (response.status === 201) {
+//                 alert('Candidato cadastrado com sucesso')
+//             } else {
+//                 alert('Erro')
+//                 console.log(response)
+//             }
+//         })
+// }
+
+
+<div>
+      <form onSubmit={cadastrar}>
+      <div className="container-fluid">
+        <div
+      
+          className="row"
+          style={{ height: '38rem', justifyContent: 'center' }}
+        >
+          <div className="col-1" style={{ height: '500px' }}>
+            <div className="etapa_candidato">
+              <p>1</p>
+            </div>
+            <div className="linha2"></div>
+          </div>
+          <div
+            className="col-10"
+            style={{
+              height: '500px',
+              backgroundColor: 'white',
+              justifyContent: 'space-between',
+            }}
+          >
+            
+            <div
+              className="row"
+              style={{ height: '15%', backgroundColor: 'white ' }}
+            >
+              <div className="col">
+                <h1 className="dados">Carreira dos Sonhos</h1>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{ height: '25%', backgroundColor: 'white' }}
+            >
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '22px',
+                    padding: '0 0 15px 0',
+                  }}
+                >
+                  Qual carreira você esta buscando ?
+                </p>
+                <input
+                  name="carreira"
+                  type="text"
+                  placeholder="Digite a tão desejada carreira"
+                  style={{
+                    width: '700px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{
+                height: '20%',
+                backgroundColor: 'white',
+                padding: '18px 0 0 0',
+              }}
+            >
+              <div className="col" style={{ backgroundColor: '#F5F7FB' }}>
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '13px',
+                    padding: '10px 0 0 0',
+                  }}
+                >
+                  Nos conte o tempo de experiência que você tem
+                </p>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Quero começar!
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '0 0 0 30px',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  0 - 3 anos
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  3 - 6 anos
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  + 6 anos
+                </label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6"></div>
+              <div className="col"></div>
+            </div>
+            <div
+              className="row"
+              style={{ height: '30%', backgroundColor: 'white' }}
+            >
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '22px',
+                    padding: '20px 0 12px 0',
+                  }}
+                >
+                  Qual é a sua pretensão salarial?
+                </p>
+                <input
+                name="salario"
+                  type="text"
+                  placeholder="R$ "
+                  style={{
+                    width: '700px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+            </div>
+            <div className="row" style={{ height: '30%' }}>
+              <div className="col-7">
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '18px',
+                    padding: '20px 0 12px 0',
+                  }}
+                >
+                  Selecione todos os modelos de contratação que você aceita
+                </p>
+                <input
+                name="contratacao"
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 60px 0 10px',
+                  }}
+                >
+                  Estágio
+                </label>
+                <input
+                name="contratacao"
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 60px 0 10px',
+                  }}
+                >
+                  CLT
+                </label>
+                <input
+                name="contratacao"
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  PJ
+                </label>
+              </div>
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '18px',
+                    padding: '20px 0 12px 0',
+                  }}
+                >
+                  Selecione os locais onde você quer trabalhar
+                </p>
+                <input
+                name="trabalho"
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 60px 0 10px',
+                  }}
+                >
+                  Presencial
+                </label>
+                <input
+                name="trabalho"
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 60px 0 10px',
+                  }}
+                >
+                  Remoto
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid">
+        <div
+          className="row"
+          style={{ height: '38rem', justifyContent: 'center' }}
+        >
+          <div className="col-1" style={{ height: '500px' }}>
+            <div className="etapa_candidato">
+              <p>2</p>
+            </div>
+            <div className="linha2"></div>
+          </div>
+          <div
+            className="col-10"
+            style={{
+              height: '500px',
+              backgroundColor: 'white',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div
+              className="row"
+              style={{ height: '15%', backgroundColor: 'white ' }}
+            >
+              <div className="col">
+                <h1 className="dados">Experiências</h1>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{ height: '25%', backgroundColor: 'white' }}
+            >
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '22px',
+                    padding: '0 0 15px 0',
+                  }}
+                >
+                  Você tem um curriculo recente?
+                </p>
+                <p>
+                  Sabemos que essa etapa pode ser longa, por isso aconselhamos o
+                  upload do seu currículo. Aceitamos os formatos{' '}
+                  <span
+                    style={{
+                      fontWeight: '500',
+                    }}
+                  >
+                    {' '}
+                    pdf, doc ou docx{' '}
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-4">
+                <input
+                name="curriculo"
+                  type="text"
+                  placeholder="Curriculo.txt"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+              <div className="col">
+                <input
+                  type="submit"
+                  value="Procurar"
+                  style={{ marginTop: '5px' }}
+                />
+              </div>
+            </div>
+            <div className="row" style={{ backgroundColor: 'white' }}>
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '22px',
+                    padding: '30px 0 0 0',
+                  }}
+                >
+                  Formação acadêmica
+                </p>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{ height: '25%', backgroundColor: 'white' }}
+            >
+              <div className="col-5">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  Instituição
+                </p>
+                <input
+                  type="text"
+                  placeholder="Senai de Informatica"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  Curso
+                </p>
+                <input
+                  type="text"
+                  placeholder="Desenvolvimento de Sistema"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  Ano de Conclusão
+                </p>
+                <input
+                  type="text"
+                  placeholder="MM/AAAA"
+                  style={{
+                    width: '200px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid">
+        <div
+          className="row"
+          style={{ height: '32rem', justifyContent: 'center' }}
+        >
+          <div className="col-1" style={{ height: '500px' }}>
+            <div className="etapa_candidato">
+              <p>3</p>
+            </div>
+            <div className="linha3"></div>
+          </div>
+          <div
+            className="col-10"
+            style={{
+              height: '500px',
+              backgroundColor: 'white',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div
+              className="row"
+              style={{ height: '15%', backgroundColor: 'white ' }}
+            >
+              <div className="col">
+                <h1 className="dados">Idiomas</h1>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{
+                height: '20%',
+                backgroundColor: 'white',
+                padding: '18px 0 0 0',
+              }}
+            >
+              <div className="col" style={{ backgroundColor: '#F5F7FB' }}>
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '13px',
+                    padding: '10px 0 0 0',
+                  }}
+                >
+                  Nos conte sobre a sua fluência em Inglês
+                </p>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Básico
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '0 0 0 30px',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  intermediario
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Avançado
+                </label>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{
+                height: '20%',
+                backgroundColor: 'white',
+              }}
+            >
+              <div className="col" style={{ backgroundColor: '#F5F7FB' }}>
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '13px',
+                    padding: '10px 0 0 0',
+                  }}
+                >
+                  Nos conte sobre a sua fluência em Espanhol
+                </p>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Básico
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '0 0 0 30px',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  intermediario
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Avançado
+                </label>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{
+                height: '20%',
+                backgroundColor: 'white',
+              }}
+            >
+              <div className="col" style={{ backgroundColor: '#F5F7FB' }}>
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '13px',
+                    padding: '10px 0 0 0',
+                  }}
+                >
+                  Nos conte sobre a sua fluência em Francês
+                </p>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Básico
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '0 0 0 30px',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  intermediario
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Avançado
+                </label>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{
+                height: '20%',
+                backgroundColor: 'white',
+              }}
+            >
+              <div className="col" style={{ backgroundColor: '#F5F7FB' }}>
+                <p
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '13px',
+                    padding: '10px 0 0 0',
+                  }}
+                >
+                  Nos conte sobre a sua fluência em Italiano
+                </p>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Básico
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '0 0 0 30px',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  intermediario
+                </label>
+                <input
+                  type="checkbox"
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                  }}
+                />
+                <label
+                  style={{
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    padding: '0 20px 0 10px',
+                  }}
+                >
+                  Avançado
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="container-fluid">
+        <div
+          className="row"
+          style={{ height: '38rem', justifyContent: 'center' }}
+        >
+          <div className="col-1" style={{ height: '500px' }}>
+            <div className="etapa_candidato">
+              <p>4</p>
+            </div>
+            <div className="linha4"></div>
+          </div>
+          <div
+            className="col-10"
+            style={{
+              height: '500px',
+              backgroundColor: 'white',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div
+              className="row"
+              style={{ height: '15%', backgroundColor: 'white ' }}
+            >
+              <div className="col">
+                <h1 className="dados">Dados Pessoais</h1>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{ height: '35%', backgroundColor: 'white' }}
+            >
+              <div className="col-3">
+                <figure style={{ width: '100%' }}>
+                  <div className="img_empresa" style={{ margin: 'auto' }}></div>
+                </figure>
+              </div>
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '15px 10px 0 0',
+                  }}
+                >
+                  Escolher uma foto{' '}
+                </p>
+                <p style={{ fontWeight: '500', fontSize: '16px' }}>
+                  Uma foto de perfil boa pode aumentar em até 30% as suas
+                  chances de ser convidado para a entrevista :)
+                </p>
+                <p style={{ fontWeight: '500', fontSize: '20px' }}>
+                  Fazer upload da foto
+                </p>
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{ height: '23%', backgroundColor: 'white' }}
+            >
+              <div className="col">
+                <p style={{ fontWeight: 'bold', fontSize: '20px' }}>Seu Nome</p>
+                <input
+                  type="text"
+                  placeholder="Digite seu nome"
+                  name="nome"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{ height: '25%', backgroundColor: 'white' }}
+            >
+              <div className="col-7">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  Digite seu email
+                </p>
+                <input
+                  name="foto"
+                  type="text"
+                  placeholder="senai@gmai.com"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  CPF
+                </p>
+                <input
+                  type="text"
+                  placeholder="000.000.000-00"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+            </div>
+            <div
+              className="row"
+              style={{ height: '25%', backgroundColor: 'white' }}
+            >
+              <div className="col-7">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  E o seu número de celular?
+                </p>
+                <input
+                name="telefone"
+                  type="text"
+                  placeholder="(XX) XXXXX-XXXX"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  Linkedin
+                </p>
+                <input
+                name="linkedin"
+                  type="url"
+                  placeholder="https://linkedin.com/in/<seu perfil>"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-7">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  Github
+                </p>
+                <input
+                name="git"
+                  type="url"
+                  placeholder="https://github.com/in/<seu perfil>"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+              <div className="col">
+                <p
+                  style={{
+                    fontWeight: '600',
+                    fontSize: '20px',
+                    padding: '10px 0 12px 0',
+                  }}
+                >
+                  Portifolio
+                </p>
+                <input
+                name="portifolio"
+                  type="url"
+                  placeholder="URL do seu portfólio"
+                  style={{
+                    width: '350px',
+                    height: '40px',
+                    border: '1px solid black',
+                    borderRadius: '4px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    padding: '6px 10px',
+                  }}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-2" style={{ padding: '0 0 0 79.3%' }}>
+              
+                {/* <Link to="/perfilempresa"> */}
+                  <button id="cadastrar" type="submit" className="button4 button44">Finalizar</button>
+                {/* </Link> */}
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+        </div>

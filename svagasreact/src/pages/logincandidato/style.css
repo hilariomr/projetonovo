@@ -1,0 +1,216 @@
+/* Remove a linha dos links */
+.login > body {
+  margin-bottom: 20vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content-login {
+  width: 500px;
+  min-height: 560px;
+  margin: 0px auto;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+
+  
+}
+
+#login > form{
+  padding: 18px 6% 18px 6%;
+}
+
+#login {
+  position: absolute;
+  width: 88%;
+  margin: 55px 0;
+  border: 1px solid rgba(147, 184, 189, 0.8);
+  box-shadow: 0px 0px 6px 1px rgba(168, 168, 168, 0.6);
+  /* border-radius: 5px; */
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+
+ #login > form > .form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.retangus > div > a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+   font-weight: 600;
+
+}
+
+.retangus{
+  display: flex;
+  flex-direction: row;
+}
+
+.retangu1 > a {
+  color: #fff;
+}
+
+.triangulo {
+  margin-left: 69px;
+  margin-top: 22px;
+  position: absolute;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-top: 14px solid#074A71;
+}
+
+.retangu2 > a {
+  color: #4A4A4A;
+}
+
+.retangu1{
+  background-color: #074A71;
+  line-height: 0;
+  width:221px;
+  border: 25px solid #074A71;
+  margin-bottom: 2em;
+ }
+
+ .retangu2{
+  background-color: #8EB2C7;
+  line-height:0px;
+  width:221px;
+  border: 25px solid #8EB2C7;
+  margin-bottom: 2em;
+ }
+
+
+.cpf-login {
+  margin: 25px 0;
+}
+
+.form-login > p > label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #15616D;
+}
+
+.infos {
+  font-size: 11.7px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  padding-top: 12px;
+  padding-bottom: 3em;
+  
+
+}
+
+.infos > p > a {
+  font-weight: bold;
+  cursor: pointer;
+  
+  
+}
+
+.infos > p > a:hover {
+  color: #39bfd7;
+ 
+}
+
+.remember > p {
+  padding-left: 5px;
+  
+}
+
+#manterlogado {
+  cursor: pointer;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  padding-right: 45px;
+  
+}
+
+/*estilo dos input,  menos o checkbox */
+
+.form-login input:not([type="checkbox"]) {
+  margin-top: 6px;
+  display: flex;
+  height: 35px;
+  width: 22rem;
+  border: 2px solid #15616D;
+  border-radius: 4px;
+  transition: all 0.2s linear;
+}
+
+/* Estilo do botão submit1 */
+
+.form-login button[name="submit1"] {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  height: 2.5em;
+  width: 6em;
+  cursor: pointer;
+  background: #074A71;
+  color: #fff;
+  font-size: 16px;
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+}
+
+
+/*Estilo do botão submit2 */
+
+.content-login  button[name="submit2"] {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  height: 2.5em;
+  width: 100%!important;
+  cursor: pointer;
+  background: #F10034;
+  padding: 8px 5px;
+  color: #fff;
+  font-size: 16px;
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+}
+
+/*estilo do botão submit no hover */
+
+.form-login input[type="submit"]:hover {
+  background: #4ab3c6;
+}
+
+.ou {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.ou > p {
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+.ou > hr {
+  width: 200px;
+  height: 0px;
+}
+

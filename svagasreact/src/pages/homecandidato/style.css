@@ -1,0 +1,64 @@
+.home-candi>body h1,
+.container-homecandi h2 {
+    color: #484848;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
+}
+
+.container-homecandi h1 {
+    width: 25rem;
+    margin-bottom: 40px;
+}
+
+.container-homecandi {
+    margin: 0 7rem;
+    margin-top: 6rem;
+    height: 20rem;
+}
+
+.container-homecandi h2 {
+    margin-bottom: 4em;
+}
+
+.container-homecandi {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-homecandi img {
+    width: 400px;
+    height: 370px;
+    position: relative;
+    left: 40rem;
+    bottom: 19.5rem;
+}
+
+.buttons-homecandi button,
+.buttons-homecandi a {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    height: 2.5em;
+    cursor: pointer;
+    background: #F10034;
+    padding: 8px 43px;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+    margin-right: 80px;
+}
+
+.buttons-homecandi {
+    position: relative;
+    bottom: 23.5rem;
+}
+
+#titulo-home {
+    display: flex;
+    text-align: center;
+    padding: 0 15rem;
+    justify-content: center;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}

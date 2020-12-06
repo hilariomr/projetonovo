@@ -1,0 +1,61 @@
+.carddv {
+    width: 55rem;
+    height: 5rem;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    box-shadow: 3px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin: 0rem 2rem 0rem 2rem;
+    margin-bottom: 20px;
+}
+
+.conteudodv {
+    margin: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao2 {
+    height: 20px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    color: #FF0000;
+    font-size: 30px;
+    font-weight: bolder;
+    display: flex;
+}
+
+.botao1 {
+    height: 20px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    color: #FF0000;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.ifcarddv {
+    width: 55rem;
+    height: 9rem;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    box-shadow: 3px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin: 0rem 2rem 0rem 2rem;
+    margin-bottom: 20px;
+}
+
+.conteudo2dv {
+    margin: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    width: 80%;
+    margin: 0px 60px;
+}

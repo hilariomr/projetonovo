@@ -1,0 +1,56 @@
+.home-empresa>body h1,
+.container-homeempresa h2,
+.container-homeempresa h3 {
+    color: #484848;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
+}
+
+.container-homeempresa h1 {
+    width: 30rem;
+    margin-bottom: 40px;
+}
+
+.container-homeempresa {
+    margin: 0 7rem;
+    margin-top: 6rem;
+    height: 20rem;
+    width: 27rem;
+}
+
+.container-homeempresa h2 {
+    margin-bottom: 15px;
+}
+
+.container-homeempresa h3 {
+    width: 30rem;
+    margin-bottom: 25px;
+}
+
+.container-homeempresa img {
+    position: relative;
+    left: 37rem;
+    bottom: 15.5rem;
+}
+
+.buttons-homeempresa button,
+.buttons-homeempresa a {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    height: 2.5em;
+    cursor: pointer;
+    background: #F10034;
+    padding: 8px 43px;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+.buttons-homeempresa {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 16rem;
+}

@@ -1,0 +1,133 @@
+.container-home{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-home > div p {
+    color: #4D4D4D;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 5rem;
+    line-height: 30px;
+}
+
+.container-home > div img {
+    margin-top: 3rem;
+}
+
+.content-home1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5rem;
+    text-align: center;
+}
+
+
+.content-home2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5rem;
+    text-align: center;
+}
+
+
+
+.container-home button[name="button-home"] {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    height: 42px;
+    width: 135px;
+    background-color: #074A71;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    margin-top: 2rem;
+}
+
+.container-home button[name="button-home"]:hover {
+    background-color:  #033450;
+}
+
+
+.home > body h1 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    margin:  4rem 0;
+    font-weight: 500;
+    
+}
+
+.container-carrossa {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5rem;
+    background-color: #F10034;
+    color: white;
+    padding: 5% 12%;
+    
+    
+}
+
+.container-carrossa > div {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.texts-carrosa h2{
+    font-size: 27px;
+    line-height: 50px;
+    
+}
+.texts-carrosa {
+    margin-right: 40px;
+}
+
+.texts-carrosa h3 {
+    line-height: 40px;
+    margin-top: 25px;
+    font-weight: normal;
+}
+
+.infos-carrosa {
+    display: flex;
+    flex-direction: column;
+    line-height: 35px;
+    
+}
+
+.infos-carrosa h3{
+    text-align: center;
+    
+}
+
+.infos-carrosa h4{
+    
+    text-align: center;
+}
+
+.infos-carrosa img{
+    display: flex;
+    align-items: center;
+    width: 190px;
+    height: 180px;
+    position: relative;
+    bottom: 20px;
+   
+}
+
+.empresas-parca {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
+}

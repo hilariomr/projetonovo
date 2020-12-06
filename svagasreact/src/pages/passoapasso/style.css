@@ -1,0 +1,92 @@
+.container_func{
+  height: 20rem;
+  margin-top: 50px;
+}
+
+.container_engloba {
+  width: 75%;
+  margin: auto;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container_engloba > img {
+  width: 250px;
+  height: 250px;
+}
+
+.container_passo {
+  width: 30rem;
+}
+
+.container_passo > h3{
+  font-size: 30px;
+  padding: 10px 0 10px 0;
+}
+
+.container_passo > p {
+  font-size: 20px;
+}
+
+.passo1 {
+  font-size: 30px;
+  margin-left: 10.5rem;
+  padding: 50px 0 50px 0;
+}
+
+.container_engloba2 {
+  width: 75%;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.pega_img {
+  width: 50%;
+  height: 100%;
+}
+
+.pega_img > img{
+  width: 250px;
+  height: 250px;
+  margin: 90px 128px 0;
+}
+
+.cont_passo1{
+  padding: 0 0 80px 0;
+}
+
+#titulo_passo{
+  font-size: 25px;
+  padding: 15px 0 15px 0;
+} 
+
+#cont_passo{
+  font-size: 20px;
+}
+
+.pega_img2 {
+  width: 50%;
+  height: 100%;
+}
+
+.pega_img2 > img{
+  width: 250px;
+  height: 250px;
+  margin: 80px 128px 0;
+}
+
+.com_duvida {
+  width: 50%;
+  margin: auto;
+  padding: 70px 0 70px 0;
+}
+
+.com_duvida > p{
+  font-size: 20px;
+  text-align: center  ; 
+}
