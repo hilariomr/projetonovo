@@ -4,7 +4,6 @@ import { Form } from 'react-bootstrap'
 function Endereco({enderecoCallBack}) {
     function buscaCep(event) {
         let cep = event.target.value;
-        console.log(cep)
         if (cep.length === 8) {
             let apiURL = `https://api.pagar.me/1/zipcodes/${cep}`
             let fetchInfo =  {

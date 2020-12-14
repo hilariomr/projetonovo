@@ -8,79 +8,71 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import '../../assets/styles/global.css';
 import { useEffect, useState } from 'react';
-import { buscarCandidatoPorID } from '../../services/candidatoService';
-import { buscarFormacoesPorDadoCandidato } from '../../services/formacaoService';
 
-function PerfilCandidato() {
+function MostrarCandidato() {
   const [candidato, setCandidato] = useState({})
-  const [formacoes, setFormacoes] = useState([])
 
-  useEffect(() => {
-    let idUsuario = localStorage.getItem("identificador-usuario")
-    buscarCandidatoPorID(idUsuario, (dados) => {
-      console.log(dados)
-      let candidato = converterDados(dados)
-      buscarFormacoesPorDadoCandidato(candidato.idDadoCandidato)
-        .then(dados => {
-          let formacoes = converterFormacoes(dados)
-          setFormacoes(formacoes)
-          setCandidato(candidato)
-        })
-    })
+  function getFecthInfo() {
+    let token = localStorage.getItem("token-usuario")
+    let info = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': 'bearer ' + token
+        }
+    }
   
-  }, [])
-
-  function converterFormacoes(dados) {
-    return dados.map(item => {
-      return {
-        curso: item.idFormacaoNavigation.curso,
-        instituicao: item.idFormacaoNavigation.instituicao,
-        dataInicio: item.idFormacaoNavigation.dataInicio.slice(0,4),
-        dataConclusao: item.idFormacaoNavigation.dataConclusao.slice(0,4)
-      }
-    })
+    return info
   }
 
-  function converterDados(dados) {
+  useEffect(() => {
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString);
+    let id = urlParams.get('id')
+    
+    fetch(`http://localhost:5000/api/Candidato/${id}`, getFecthInfo())
+      .then(response => {
+        console.log(response)
+        if(response.ok) return response.json()
+      }).then(dados => {
+        setCandidato(getCandidatoFormatado(dados))
+      })
+
+  }, [])
+
+  function getCandidatoFormatado(dados) {
+    if (!dados) return null
     return {
-      idCandidato: dados.idCandidato,
-      nomeCompleto: dados.dadosCandidato.nomeCompleto,
+      nome: dados.idDadoCandidatoNavigation.nomeCompleto,
+      tipoCarreira: dados.idDadoCandidatoNavigation.tipoCarreira,
+      modeloContratacao: dados.idDadoCandidatoNavigation.modeloContratacao,
+      pretensaoSalarial: dados.idDadoCandidatoNavigation.pretencaoSalarial,
+      linkedin: dados.idDadoCandidatoNavigation.linkLinkedin,
+      git: dados.idDadoCandidatoNavigation.linkGit,
+      portifolio: dados.idDadoCandidatoNavigation.linkPortifolio,
+      curriculo: dados.idDadoCandidatoNavigation.curriculo,
+      tipoTrabalho: dados.idDadoCandidatoNavigation.tipoTrabalho,
+      telefone: dados.idDadoCandidatoNavigation.telefone,
       email: dados.email,
-      tipoCarreira: dados.dadosCandidato.tipoCarreira,
-      modeloContratacao: dados.dadosCandidato.modeloContratacao,
-      pretensaoSalarial: dados.dadosCandidato.pretencaoSalarial,
-      linkedin: dados.dadosCandidato.linkedin,
-      git: dados.dadosCandidato.git,
-      portifolio: dados.dadosCandidato.portifolio,
-      telefone: dados.dadosCandidato.telefone,
-      idDadoCandidato: dados.dadosCandidato.idDadoCandidato
+  
     }
   }
   
   return (
+
     <div className="perfil-candidato">
       <Header />
-
+      { candidato ? 
+      <>
       <div className="header-perfil">
         <div className="capa-candi">
         </div>
         <img id="foto-perfil" src={imgPerfilCandi} alt="" />
-        <h1>{candidato.nomeCompleto}</h1>
+        <h1>{candidato.nome}</h1>
         <h2>{candidato.tipoCarreira}</h2>
-        <section id="buttons-perfis">
-          <Link to="/perfil/candidato/editar">
-            <button>Editar Perfil</button>
-          </Link>
-          < Link to="/vagas">
-            <button>Buscar Vagas</button>
-          </Link>
-          < Link to="/inscricoes">
-            <button>Minhas Inscrições</button>
-          </Link>
-        </section>
       </div>
-
-      <div>
+    
+      <body>
       <div className="container-perfilcandi">
      
         <div className="sobre-perfil">
@@ -156,17 +148,31 @@ function PerfilCandidato() {
 
         <div className="formacao-perfil">
           <h3>Formação acadêmica</h3>
-          <ul>
-            {formacoes.map(formacao => 
-              <li>
-                <h3>{formacao.curso}</h3>
-                <p>{formacao.instituicao}</p>
-                <p>{formacao.dataInicio} - {formacao.dataConclusao}</p>
-              </li>
-            )}  
-          </ul>
-          
-          
+          <table>
+            <thead>
+              <tr>
+                <th>Desenvolvimento de Sistemas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Senai Informática</td>
+                <td>2017 - 2019</td>
+              </tr>
+            </tbody>
+
+            <thead id="thead">
+              <tr>
+                <th>Desenvolvimento de Sistemas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Senai Informática</td>
+                <td>2017 - 2019</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
        
         <hr/>
@@ -207,11 +213,12 @@ function PerfilCandidato() {
         <hr/>
         </div>
 
-      </div>
-
+      </body>
+      </>
+: <p>Não Encontrado</p>}
       <Footer />
     </div>
   )
 }
 
-export default PerfilCandidato;
+export default MostrarCandidato;

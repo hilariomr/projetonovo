@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './style.css';
 import '../../assets/styles/global.css';
+import { Link, Route } from 'react-router-dom';
+import VagasInscricoes from '../../pages/vagasinscricoes';
 
 function CardVaga(props) {
     let vaga = props.item
@@ -56,7 +58,12 @@ function CardVaga(props) {
                     <p className="itenslista">Horário de entrada: {vaga.entradaDoTrabalho}</p>
                     <p className="itenslista">Horário de saída: {vaga.terminoDoTrabalho}</p>                    
                 </Card.Text>
-                <Button variant="primary" data-idvaga={vaga.idVaga} onClick={inscrever}>Me Inscrever</Button>
+                {props.empresaVisualizacao ? 
+                    <a href={'/vagas/inscricoes?id=' + vaga.idVaga + '&titulo=' + vaga.tituloVaga} >
+                        <Button variant="primary">Ver Inscrições</Button>
+                    </a>
+                    : <Button variant="primary" data-idvaga={vaga.idVaga} onClick={inscrever}>Me Inscrever</Button>
+                }
             </Card.Body>
         </Card>
     )

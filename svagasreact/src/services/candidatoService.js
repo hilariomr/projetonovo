@@ -34,7 +34,8 @@ export function buscarCandidatoPorID(id, callback) {
                     linkCurriculo: dados.idDadoCandidatoNavigation.curriculo,
                     linkedin: dados.idDadoCandidatoNavigation.linkLinkedin,
                     portifolio: dados.idDadoCandidatoNavigation.linkPortifolio,
-                    git: dados.idDadoCandidatoNavigation.linkGit
+                    git: dados.idDadoCandidatoNavigation.linkGit,
+                    idEndereco: dados.idDadoCandidatoNavigation.idEndereco
                 }
             })
         })

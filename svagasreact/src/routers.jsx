@@ -15,6 +15,11 @@ import VagasListar from './pages/vagaslistar';
 import CadastroEmpresa from './pages/cadastroempresa/index';
 import CadastroCandidato from './pages/cadastrocandidato/index';
 import AtualizaCandidato from './pages/atualizacaocandidato';
+import Inscricoes from './pages/inscricoes';
+import AtualizacaoEmpresa from './pages/atualizacaoempresa';
+import VagasEmpresa from './pages/vagasempresa';
+import VagasInscricoes from './pages/vagasinscricoes';
+import MostrarCandidato from './pages/mostrarcandidato';
 
 
 
@@ -27,15 +32,21 @@ function Routers() {
                 <Route path="/login/empresa" exact component={LoginEmpresa} />
                 <Route path="/login/admin" exact component={LoginAdmin} />
                 <Route path="/perfil/candidato" exact component={PerfilCandidato} />
+                <Route path="/mostrarcandidato" exact component={MostrarCandidato} />
                 <Route path="/perfil/empresa" exact component={PerfilEmpresa} />
                 <Route path="/home/candidato" exact component={HomeCandidato} />
                 <Route path="/home/empresa" exact component={HomeEmpresa} />
                 <Route path="/duvidas" exact component={Duvidas} />
                 <Route path="/admin" exact component={Admin}/>
                 <Route path="/vagas/cadastro" exact component={VagasCadastrar}/>
+                <Route path="/vagas/empresa" exact component={VagasEmpresa}/>
                 <Route path="/vagas" exact component={VagasListar}/>
                 <Route path="/cadastroempresa" exact component={CadastroEmpresa} />
+                <Route path="/atualizacaoempresa" exact component={AtualizacaoEmpresa} />
+
                 <Route path="/cadastrocandidato" exact component={CadastroCandidato} />
+                <Route path="/inscricoes" exact component={Inscricoes} />
+                <Route path="/vagas/inscricoes" exact component={VagasInscricoes} />
 
                 <Route path="/perfil/candidato/editar" exact component={AtualizaCandidato} />
             </BrowserRouter>

@@ -6,7 +6,6 @@ import '../../assets/styles/global.css';
 
 function Header() {
     let identificador = localStorage.getItem("identificador-usuario")
-    console.log(identificador)
     let history = useHistory();
 
     const deslogar = () => {
@@ -29,7 +28,12 @@ function Header() {
                     <Link to="/duvidas"><li>Dúvidas</li></Link>
                 </ul>
                 {identificador ?  
-                    <button id="button-nav" onClick={deslogar}>Logout</button>
+                    <>
+                    <Link to={localStorage.getItem("tipo-usuario") == 1 ? '/perfil/candidato' : '/perfil/empresa'}>
+                        <button className='button-nav' >Meu Perfil</button>
+                    </Link>
+                    <button className='button-nav' onClick={deslogar}>Logout</button>
+                    </>
                 : <Link to="/login/candidato"><button id="button-nav">Login/Cadastro</button></Link>}
                 
             </nav>

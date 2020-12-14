@@ -5,56 +5,38 @@ import Header from '../../components/header/index';
 import { Form, Image } from 'react-bootstrap';
 import imgPerfil from '../../assets/icones/perfil.svg';
 import Endereco from '../../components/formendereco';
+import { cadastarDadosEmpresaService, cadastarEmpresaService } from '../../services/empresaService';
 
 function CadastroEmpresa() {
-  function getFecthInfo(dados) {
-    let token = localStorage.getItem("token-usuario")
-    let info = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'authorization': 'bearer ' + token
-        },
-        body: JSON.stringify(dados)
-    }
-  
-    return info
-  }
-
   function onCadastrarEndereco(idEndereco) {
     cadastrarDadosEmpresa(idEndereco)
   }
 
   function cadastrarDadosEmpresa(idEndereco) {
     let form = document.getElementById("dadosEmpresaForm")
-    let dados = getDadosEmpresa(form.elements, idEndereco)
-    let info = getFecthInfo(dados)
-    fetch("http://localhost:5000/api/DadoEmpresa", info)
-            .then(response => {
-                if (response.status === 201) {
-                    console.log("Dados Empresa cadastrado")
-                    response.json().then(dados => cadastrarEmpresa(dados.idDadoEmpresa))
-                } else {
-                    alert('Erro')
-                    console.log(response)
-                }
-            })
+    let dadosEmpresa = getDadosEmpresa(form.elements, idEndereco)
+    cadastarDadosEmpresaService(dadosEmpresa)
+      .then(dados => {
+        console.log('Dados da empresa cadastradas')
+        cadastrarEmpresa(dados.idDadoEmpresa)
+      })
+      .catch(erro => {
+        alert('Erro ao cadastrar dados da empresa')
+        console.log(erro)
+      })
   }
 
   function cadastrarEmpresa(idDadoEmpresa) {
     let form = document.getElementById("contaAcessoForm")
-    let dados = getContaEmpresaDados(form.elements, idDadoEmpresa)
-    let info = getFecthInfo(dados)
-    fetch("http://localhost:5000/api/Empresa", info)
-            .then(response => {
-                if (response.status === 201) {
-                    console.log("Empresa cadastrada")
-                    alert("Empresa Cadastrada com Sucesso")
-                } else {
-                    alert('Erro')
-                    console.log(response)
-                }
-            })
+    let dadosEmpresa = getContaEmpresaDados(form.elements, idDadoEmpresa)
+    cadastarEmpresaService(dadosEmpresa)
+      .then(() => {
+        console.log("Empresa cadastrada")
+        alert("Empresa Cadastrada com Sucesso")
+      }).catch(erro => {
+        alert('Erro ao cadastrar dados da empresa')
+        console.log(erro)
+      })
   }
 
   function getContaEmpresaDados(campos, idDadoEmpresa) {

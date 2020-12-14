@@ -24,3 +24,16 @@ export function atualizarDadosCandidato(id, dados) {
             }
         })
 }
+
+export function buscarDadosCandidato(id) {
+    let info = getFecthInfo("GET")
+    return fetch(`http://localhost:5000/api/DadoCandidato/${id}`, info)
+        .then(response => {
+            if (response.status === 200) {
+                return response.json()
+            } else {
+                alert('Erro')
+                console.log(response)
+            }
+        })
+}

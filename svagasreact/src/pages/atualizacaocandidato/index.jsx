@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/header/index';
 import './style.css';
 import '../../assets/styles/global.css';
@@ -7,10 +7,15 @@ import imgPerfil from '../../assets/icones/perfil.svg';
 import { useEffect } from 'react';
 import {buscarCandidatoPorID, atualizarCandidato} from '../../services/candidatoService';
 import { atualizarDadosCandidato } from '../../services/dadosCandidatoService';
+import EnderecoEdicao from '../../components/enderecoedicao';
+import { buscarEnderecoAPI } from '../../services/enderecoService';
+import MinhasFormacoes from '../../components/minhasformacoes';
 
 
 
 function AtualizaCandidato() {
+  const [dadoCandidatoId, setDadoCandidatoId] = useState(0)
+
   useEffect(() => {
     let idUsuario = localStorage.getItem("identificador-usuario")
     buscarCandidatoPorID(idUsuario, preencherContaAcessoForm)
@@ -28,6 +33,7 @@ function AtualizaCandidato() {
 
   function preencherDadosCandidato(dados) {
     let form = document.getElementById('dadosCandidatoForm')
+    setDadoCandidatoId(dados.idDadoCandidato)
     form.elements.idDadoCandidato.value = dados.idDadoCandidato
     form.elements.tipoCarreira.value = dados.tipoCarreira
     form.elements.pretencaoSalarial.value = dados.pretencaoSalarial
@@ -39,28 +45,20 @@ function AtualizaCandidato() {
     form.elements.git.value = dados.git
     form.elements.portifolio.value = dados.portifolio
     form.elements.telefone.value = dados.telefone
+    preencherEndereco(dados.idEndereco)
   }
 
-
-  // function onEnderecoCadastrado(idEndereco) {
-  //   cadastrarDadosCandidato(idEndereco)
-  // }
-
-  // function cadastrarDadosCandidato(idEndereco) {
-  //   let form = document.getElementById("dadosCandidatoForm")
-  //   let dados = getDadoCandidato(form.elements, idEndereco)
-  //   let info = getFecthInfo(dados)
-  //   fetch("http://localhost:5000/api/DadoCandidato", info)
-  //           .then(response => {
-  //               if (response.status === 201) {
-  //                   console.log("Dados Candidato cadastrado")
-  //                   response.json().then(dados => cadastrarCandidato(dados.idDadoCandidato))
-  //               } else {
-  //                   alert('Erro')
-  //                   console.log(response)
-  //               }
-  //           })
-  // }
+  function preencherEndereco(id) {
+    let form = document.getElementById('enderecoForm')
+    buscarEnderecoAPI(id).then(dados => {
+      form.elements.cep.value = dados.cep
+      form.elements.rua.value = dados.rua
+      form.elements.numero.value = dados.numero
+      form.elements.cidade.value = dados.cidade
+      form.elements.uf.value = dados.uf
+      form.elements.enderecoId.value = id
+    })
+  }
 
   function submitContaAcessoForm(event) {
     event.preventDefault()
@@ -202,8 +200,9 @@ function AtualizaCandidato() {
 
             <button type='submit'>Atualizar dados do Candidato</button>
           </Form>
-        
-        {/* <Endereco enderecoCallBack={onEnderecoCadastrado} /> */}
+
+          <EnderecoEdicao />
+          <MinhasFormacoes candidatoId={dadoCandidatoId} />
      
       </section>
     </>

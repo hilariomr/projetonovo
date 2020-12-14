@@ -10,33 +10,27 @@ nav {
     justify-content: center;
 }
 
-
-nav > ul {
+nav>ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
     align-items: center;
-    
-    
 }
 
-nav > ul > a{
+nav>ul>a {
     margin: 0 3.8rem;
     color: #000;
-
 }
 
-nav > ul > a :hover {
+nav>ul>a :hover {
     font-weight: 600;
-    
 }
 
-nav > ul > a :active {
+nav>ul>a :active {
     transform: translateY(1px);
-    
 }
 
-#button-nav {
+.button-nav {
     cursor: pointer;
     margin-left: 4rem;
     font-size: 15px;
@@ -49,9 +43,11 @@ nav > ul > a :active {
     color: white;
 }
 
-#button-nav:hover {background-color: #074A71}
+#button-nav:hover {
+    background-color: #074A71
+}
 
 #button-nav:active {
-  background-color:  #074A71;
-  transform: translateY(1px);
+    background-color: #074A71;
+    transform: translateY(1px);
 }
