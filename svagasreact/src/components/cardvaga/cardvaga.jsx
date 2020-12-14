@@ -62,7 +62,7 @@ function CardVaga(props) {
                     <a href={'/vagas/inscricoes?id=' + vaga.idVaga + '&titulo=' + vaga.tituloVaga} >
                         <Button variant="primary">Ver Inscrições</Button>
                     </a>
-                    : <Button variant="primary" data-idvaga={vaga.idVaga} onClick={inscrever}>Me Inscrever</Button>
+                    : <Button variant="primary" className="inscrever" data-idvaga={vaga.idVaga} onClick={inscrever}>Inscrever-se</Button>
                 }
             </Card.Body>
         </Card>

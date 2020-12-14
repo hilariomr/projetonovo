@@ -30,6 +30,19 @@ nav>ul>a :active {
     transform: translateY(1px);
 }
 
+#button-nav {
+    cursor: pointer;
+    margin-left: 4rem;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    height: 40px;
+    width: 130px;
+    background-color: #F10034;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
+
 .button-nav {
     cursor: pointer;
     margin-left: 4rem;
@@ -48,6 +61,15 @@ nav>ul>a :active {
 }
 
 #button-nav:active {
+    background-color: #074A71;
+    transform: translateY(1px);
+}
+
+.button-nav:hover {
+    background-color: #074A71
+}
+
+.button-nav:active {
     background-color: #074A71;
     transform: translateY(1px);
 }
