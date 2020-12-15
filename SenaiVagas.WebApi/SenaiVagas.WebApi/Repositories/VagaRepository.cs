@@ -59,6 +59,31 @@ namespace SenaiVagas.WebApi.Repositories
             ctx.SaveChanges();
         }
 
+        public List<Vaga> BuscarPorEmpresa(int id)
+        {
+            List<Vaga> vagas = ctx.Vaga.Where(e => e.IdDadoEmpresa == id)
+                .Select(c => new Vaga()
+                {
+                    IdVaga = c.IdVaga,
+                    TituloVaga = c.TituloVaga,
+                    Descricao = c.Descricao,
+                    QuanVagas = c.QuanVagas,
+                    DataInicio = c.DataInicio,
+                    DataTermino = c.DataTermino,
+                    Salario = c.Salario,
+                    Requisitos = c.Requisitos,
+                    LocalTrabalho = c.LocalTrabalho,
+                    TipoContratacao = c.TipoContratacao,
+                    EntradaDoTrabalho = c.EntradaDoTrabalho,
+                    TerminoDoTrabalho = c.TerminoDoTrabalho,
+                    IdDadoEmpresaNavigation = new DadoEmpresa()
+                    {
+                        NomeEmpresa = c.IdDadoEmpresaNavigation.NomeEmpresa,
+                    }
+                }).ToList();
+            return vagas;
+        }
+
         public List<Vaga> Listar()
         {
             return ctx.Vaga.Select(c => new Vaga()

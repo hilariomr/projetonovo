@@ -57,6 +57,28 @@ namespace SenaiVagas.WebApi.Controllers
         }
 
         /// <summary>
+        /// Lista todas as vagas por Dado Empresa
+        /// </summary>
+        /// <returns>Uma lista de vagas e um status code 200 - Ok</returns>
+        /// <response code="200">Retorna uma lista de vagas</response>
+        /// <response code="400">Retorna o erro gerado</response>
+        /// dominio/api/Vaga
+        [HttpGet("dadoEmpresa/{id}")]
+        public IActionResult GetDadoEmpresa(int id)
+        {
+            try
+            {
+                return Ok(_vagaRepository.BuscarPorEmpresa(id));
+            }
+            catch (Exception error)
+            {
+
+                return BadRequest(error);
+            }
+
+        }
+
+        /// <summary>
         /// Busca uma vaga através do ID
         /// </summary>
         /// <param name="id">ID da vaga que será buscada</param>

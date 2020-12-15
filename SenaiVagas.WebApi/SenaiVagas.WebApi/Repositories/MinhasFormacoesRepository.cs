@@ -25,9 +25,17 @@ namespace SenaiVagas.WebApi.Repositories
             return minhaFormacaoBuscada;
         }
 
+        public List<MinhasFormacoes> BuscarPorIdDadoCandidato(int id)
+        {
+            List<MinhasFormacoes> minhaFormacaoBuscada = ctx.MinhasFormacoes
+                .Include(e => e.IdFormacaoNavigation)
+                .Where(e => e.IdDadoCandidato == id).ToList();
+
+            return minhaFormacaoBuscada;
+        }
 
 
-            public List<MinhasFormacoes> Listar()
+        public List<MinhasFormacoes> Listar()
         {
             return ctx.MinhasFormacoes.Select(c => new MinhasFormacoes()
             {

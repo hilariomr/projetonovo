@@ -131,7 +131,7 @@ namespace SenaiVagas.WebApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [Authorize(Roles = "EMPRESA")]
+        [Authorize(Roles = "EMPRESA,CANDIDATO")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

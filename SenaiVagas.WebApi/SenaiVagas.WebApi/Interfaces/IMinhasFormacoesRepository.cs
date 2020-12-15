@@ -12,5 +12,7 @@ namespace SenaiVagas.WebApi.Interfaces
 
         MinhasFormacoes BuscarPorId(int id);
 
+        List<MinhasFormacoes> BuscarPorIdDadoCandidato(int id);
+
     }
 }

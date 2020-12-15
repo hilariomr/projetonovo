@@ -43,5 +43,17 @@ namespace SenaiVagas.WebApi.Controllers
         {
             return Ok(_minhasFormacoesRepository.BuscarPorId(id));
         }
+
+        /// <summary>
+        /// Busca uma Formação através do DadoCandidato id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        
+        [HttpGet("dadocandidato/{id}")]
+        public IActionResult GetByDadoCandidatoId(int id)
+        {
+            return Ok(_minhasFormacoesRepository.BuscarPorIdDadoCandidato(id));
+        }
     }
 }

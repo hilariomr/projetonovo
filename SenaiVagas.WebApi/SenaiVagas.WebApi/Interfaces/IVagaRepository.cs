@@ -17,5 +17,7 @@ namespace SenaiVagas.WebApi.Interfaces
         void Deletar(int id);
 
         Vaga BuscarPorId(int id);
+
+        List<Vaga> BuscarPorEmpresa(int idDadoEmpresa);
     }
 }

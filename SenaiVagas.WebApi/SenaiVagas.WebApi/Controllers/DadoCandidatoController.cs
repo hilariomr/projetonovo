@@ -76,7 +76,6 @@ namespace SenaiVagas.WebApi.Controllers
         ///     
         ///</remarks>
         /// <param name="novoDadoCandidato">Objeto que sera cadastrado</param>
-        [Authorize(Roles = "CANDIDATO")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]

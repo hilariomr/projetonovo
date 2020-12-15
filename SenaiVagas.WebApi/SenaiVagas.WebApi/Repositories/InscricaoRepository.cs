@@ -87,6 +87,10 @@ namespace SenaiVagas.WebApi.Repositories
                     Requisitos = c.IdVagaNavigation.Requisitos,
                     LocalTrabalho = c.IdVagaNavigation.LocalTrabalho,
                     TipoContratacao = c.IdVagaNavigation.TipoContratacao,
+                    IdDadoEmpresaNavigation = new DadoEmpresa()
+                    {
+                        NomeEmpresa = c.IdVagaNavigation.IdDadoEmpresaNavigation.NomeEmpresa,
+                    }
 
 
                 },

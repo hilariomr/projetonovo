@@ -42,7 +42,7 @@ namespace SenaiVagas.WebApi.Controllers
         /// </summary>
         /// <param name="id">Id do candidato que sera buscado</param>
         /// <returns></returns>
-        [Authorize(Roles = "CANDIDATO")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]

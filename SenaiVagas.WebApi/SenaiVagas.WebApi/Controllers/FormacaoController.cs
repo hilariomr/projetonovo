@@ -60,7 +60,7 @@ namespace SenaiVagas.WebApi.Controllers
         public IActionResult Post(Formacao novoFormacao)
         {
             _formacaoRepository.Cadastrar(novoFormacao);
-            return StatusCode(200);
+            return StatusCode(200, novoFormacao);
         }
 
         /// <summary>
