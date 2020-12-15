@@ -61,17 +61,76 @@
     color: white;
 } */
 
-.cadastro-empresa {
-    margin: 2rem 10rem;
+* {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.cadastro-empresa_icone-perfil {
-    width: 150px;
-    height: 150px;
+.form-label {
+    margin: 10px 10px 5px 0px;
+    display: flex;
+    font-weight: bold;
+}
+
+.inputCad {
+    width: 250px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.acesso {
+    padding: 30px 0 30px 0;
+}
+
+.etapa_empresa {
+    width: 3rem;
+    height: 3rem;
+    background-color: #ff0000;
+    border-radius: 100%;
+    margin: auto;
+}
+
+.etapa_empresa>p {
+    color: white;
+    font-size: 25px;
+    padding: 8px 0 0 20px;
+}
+
+.linha {
+    background-color: black;
+    width: 2px;
+    height: 550px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.cadastro-empresa {
+    margin: 2rem 10rem;
+    width: 80%;
+    height: 90rem;
+}
+
+.dados-empresa {
+    height: 42rem;
+    margin-top: 30px;
+}
+
+.tipo_empresa {
+    height: 11rem;
+}
+
+.check {
+    height: 2rem;
+    padding: 10px 0 5px 0;
+}
+
+#formGridTipoEmpresa {
+    width: 50px;
 }
 
 .form-row {
-    padding: .8rem 0;
+    padding: 0.8rem 0;
 }
 
 .form-group {
@@ -82,9 +141,33 @@
 .form-group input:not(.form-check-input),
 .form-group textarea {
     width: 100%;
-    margin: 0 2px;
 }
 
 .empresa-foto {
-    max-width: 20%;
+    max-width: 15%;
+}
+
+.button {
+    background-color: #FF0000;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 28px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #FF0000;
+}
+
+.button1:hover {
+    background-color: #FF0000;
+    color: white;
 }

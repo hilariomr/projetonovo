@@ -80,7 +80,7 @@ function PerfilCandidato() {
         </section>
       </div>
 
-      <div>
+      <body>
       <div className="container-perfilcandi">
      
         <div className="sobre-perfil">
@@ -117,7 +117,7 @@ function PerfilCandidato() {
             </thead>
             <tbody>
               <tr>
-                <td>São Paulo</td>
+                <td>{candidato.tipoTrabalho}</td>
                 <td>{candidato.linkedin}</td>
                 <td>{candidato.git}</td>
                 <td>{candidato.portifolio}</td>
@@ -159,7 +159,7 @@ function PerfilCandidato() {
           <ul>
             {formacoes.map(formacao => 
               <li>
-                <h3>{formacao.curso}</h3>
+                <h4>{formacao.curso}</h4>
                 <p>{formacao.instituicao}</p>
                 <p>{formacao.dataInicio} - {formacao.dataConclusao}</p>
               </li>
@@ -207,7 +207,7 @@ function PerfilCandidato() {
         <hr/>
         </div>
 
-      </div>
+      </body>
 
       <Footer />
     </div>

@@ -79,7 +79,7 @@ function LoginCandidato() {
                   <input id="email_login" name="email_login" required="required" type="email" onChange={e => setEmail(e.target.value)} />
                 </p>
 
-                <p>
+                <p className="senha-login">
                   <label for="senha_login">Senha</label>
                   <input id="senha_login" name="senha_login" required="required" type="password" onChange={e => setSenha(e.target.value)} />
                 </p>
@@ -93,7 +93,7 @@ function LoginCandidato() {
                   <p>Esqueceu sua senha? <a>Clique aqui</a></p>
                 </div>
 
-                <button name="submit1">Login</button>
+               <button name="submit1">Login</button>
               </div>
 
               <div className="ou">
@@ -102,7 +102,7 @@ function LoginCandidato() {
                 <hr />
               </div>
 
-              <button name="submit2">Cadastre-se</button>
+              <Link to="/cadastrocandidato"><button name="submit2">Cadastre-se</button></Link>
 
             </form>
           </div>

@@ -8,6 +8,7 @@ import '../../assets/styles/global.css';
 import Cardcandidato from '../../components/cardhomes/candidato.jsx';
 import { Link } from 'react-router-dom';
 
+
 function HomeCandidato() {
   return (
     <div className="home-candi">
@@ -21,8 +22,8 @@ function HomeCandidato() {
 
           <div className="buttons-homecandi">
             <Link to="/cadastrocandidato">Faça o seu cadastro</Link>
-            <button>Veja como fazer</button>
-          </div>
+            <Link to="/passoapasso">Veja como fazer</Link>
+ </div>
         </div>
 
         <h1 id="titulo-home">Facilitamos todo o processo de contratação para você</h1>

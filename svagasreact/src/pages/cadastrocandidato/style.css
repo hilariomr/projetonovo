@@ -61,8 +61,22 @@
     color: white;
 } */
 
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.linha_candidato {
+    background-color: black;
+    width: 2px;
+    height: 550px;
+    margin: auto;
+    margin-top: 30px;
+}
+
 .cadastro-candidato {
     margin: 2rem 10rem;
+    width: 80%;
+    height: 90rem;
 }
 
 .cadastro-candidato_icone-perfil {
@@ -70,8 +84,13 @@
     height: 150px;
 }
 
+.dados-candidato {
+    height: 52rem;
+    margin-top: 30px;
+}
+
 .form-row {
-    padding: .8rem 0;
+    padding: 0.8rem 0;
 }
 
 .form-group {
@@ -85,5 +104,5 @@
 }
 
 .candidato-foto {
-    max-width: 20%;
+    max-width: 15%;
 }

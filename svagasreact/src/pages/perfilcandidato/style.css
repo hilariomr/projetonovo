@@ -1,9 +1,9 @@
-.perfil-candi body {
+.perfil-candidato body {
     font-family: 'Montserrat', sans-serif;
     margin-top: -40px;
 }
 
-.perfil-candi>body h3 {
+.perfil-candidato>body h3 {
     margin-bottom: 15px;
     font-size: 22px;
     font-weight: 500;
@@ -127,13 +127,20 @@
     padding: 10px 3em 0 0;
 }
 
-.formacao-perfil th,
-.formacao-perfil td {
-    padding: 10px 3em 0 0;
+.formacao-perfil p {
+    padding: 10px 3em 0 2px;
 }
 
-.formacao-perfil td {
-    display: block;
+.formacao-perfil ul li h4 {
+    padding-top: 10px;
+    padding-left: 2px;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.formacao-perfil ul li {
+    list-style: none;
+    padding-bottom: 30px;
 }
 
 .idioma-perfil th,

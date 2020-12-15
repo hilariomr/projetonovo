@@ -20,6 +20,7 @@ import AtualizacaoEmpresa from './pages/atualizacaoempresa';
 import VagasEmpresa from './pages/vagasempresa';
 import VagasInscricoes from './pages/vagasinscricoes';
 import MostrarCandidato from './pages/mostrarcandidato';
+import Passo from './pages/passoapasso';
 
 
 
@@ -42,8 +43,9 @@ function Routers() {
                 <Route path="/vagas/empresa" exact component={VagasEmpresa}/>
                 <Route path="/vagas" exact component={VagasListar}/>
                 <Route path="/cadastroempresa" exact component={CadastroEmpresa} />
+                
+                <Route path="/passoapasso" exact component={Passo} />
                 <Route path="/atualizacaoempresa" exact component={AtualizacaoEmpresa} />
-
                 <Route path="/cadastrocandidato" exact component={CadastroCandidato} />
                 <Route path="/inscricoes" exact component={Inscricoes} />
                 <Route path="/vagas/inscricoes" exact component={VagasInscricoes} />

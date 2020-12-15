@@ -55,7 +55,7 @@ function Inscricoes() {
             <Header />
             <div className="capa-inscricao">
         </div>
-            <table>
+            <table className="tabela">
                 <thead className="tituloInscricao">
                     <tr>
                         
