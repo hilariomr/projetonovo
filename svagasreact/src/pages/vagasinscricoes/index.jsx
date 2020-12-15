@@ -6,6 +6,8 @@ import CardVaga from '../../components/cardvaga/cardvaga';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import { buscarInscricoesPorVaga } from '../../services/inscricaoService';
+import './style.css';
+import '../../assets/styles/global.css';
 
 function VagasInscricoes(props) {
     const [idVaga, setIdVaga] = useState(0)
@@ -31,9 +33,11 @@ function VagasInscricoes(props) {
     return (
         <div>
             <Header />
-            <h1>Inscrições da vaga {vagaTitulo}</h1>
+            <div className="capa-inscricao">
+        </div>
+            <h1 className="tituloVaga">Inscrições da vaga {vagaTitulo}</h1>
             <table>
-                <thead>
+                <thead className="vagaInscrito">
                     <tr>
                         <th>Data da Inscrição</th>
                         <th>Email do Candidato</th>
@@ -42,7 +46,7 @@ function VagasInscricoes(props) {
                     </tr>
                 </thead>
                 { inscricoes ? 
-                <tbody>
+                <tbody className="infoInscrito">
                     {inscricoes.map(inscricao => 
                         <tr>
                             <td>{inscricao.dataInscricao}</td>
@@ -53,7 +57,7 @@ function VagasInscricoes(props) {
                     )}
                 </tbody>
                 : 
-                <tbody><tr><td colSpan='4'>Nenhuma inscrição encontrada para esta vaga</td></tr></tbody>
+                <tbody className="semInscrito"><tr><td colSpan='4'>Nenhuma inscrição encontrada para esta vaga</td></tr></tbody>
                 }
             </table>
             <Footer />

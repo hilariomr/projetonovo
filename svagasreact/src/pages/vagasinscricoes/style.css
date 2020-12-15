@@ -1,0 +1,38 @@
+div {
+    font-family: 'Montserrat', sans-serif;
+}
+
+table {
+    padding: 90px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 100px;
+}
+
+.vagaInscrito tr th {
+    padding-right: 95px;
+    font-size: 16px;
+}
+
+.infoInscrito tr td {
+    padding: 50px 30px 10px 10px;
+    font-size: 15px;
+    border-color: #DCDCDC;
+    border-bottom-style: solid;
+    border-width: 2px;
+}
+
+.capa-inscricao {
+    margin-top: 30px;
+    width: 100%;
+    border: 80px solid #000000;
+    background-color: #000;
+}
+
+.semInscrito tr td {
+    padding: 80px 0 10px 0px;
+    font-size: 20px;
+}
+
+.tituloVaga {
+    margin: 100px 0 10px 180px;
+}

@@ -24,7 +24,7 @@ function VagasEmpresa() {
     return (
         <div>
             <Header />
-            <h1>Vagas da Empresa</h1>
+            
             {vagas.map(item => <CardVaga item={item} empresaVisualizacao={true}/>)}
             <Footer />
         </div>

@@ -42,15 +42,23 @@ function Inscricoes() {
             'salario': dados.idVagaNavigation.salario,
             'localTrabalho': dados.idVagaNavigation.localTrabalho,
             'tipoContratacao': dados.idVagaNavigation.tipoContratacao,
+           
         }
     }
+
+    inscricoes.sort(function(a, b) {
+        return  b.idInscricao - a.idInscricao;
+    });
 
     return (
         <>
             <Header />
+            <div className="capa-inscricao">
+        </div>
             <table>
                 <thead className="tituloInscricao">
                     <tr>
+                        
                         <th>Titulo da Vaga</th>
                         <th>Salário</th>
                         <th>Local de Trabalho</th>
@@ -61,20 +69,22 @@ function Inscricoes() {
                 {console.log(inscricoes)}
                 {inscricoes.length > 0 ?
                     <tbody className="minhaInscricao">
+                        
                         {inscricoes.map(inscricao =>
                             <tr key={inscricao.idInscricao}>
+                                
                                 <td>{inscricao.titulo}</td>                                
-                                <td>{inscricao.salario}</td>
+                                <td>{"R$ " + inscricao.salario}</td>
                                 <td>{inscricao.localTrabalho}</td>
                                 <td>{inscricao.tipoContratacao}</td>
-                                <td><button type='button' onClick={() => removeInscricao(inscricao.idInscricao)}>Remover</button></td>
-                                <hr/>
+                                <td><button type='button' className="inscricao" onClick={() => removeInscricao(inscricao.idInscricao)}>Excluir</button></td>
+                                
                             </tr>
                             
                         )}
                         
                     </tbody>
-                    : <tbody><tr><td colSpan='8'>Nenhuma vaga inscrita</td></tr></tbody>}
+                    : <tbody className="semInscricao"><tr><td colSpan='8'>Você não possui nenhuma inscrição</td></tr></tbody>}
 
             </table>
             <Footer />

@@ -1,6 +1,7 @@
 table {
-    padding: 70px;
+    padding: 90px;
     font-family: 'Montserrat', sans-serif;
+    margin-left: 100px;
 }
 
 .tituloInscricao tr th {
@@ -9,8 +10,38 @@ table {
 }
 
 .minhaInscricao tr td {
-    padding: 30px 0px 20px 20px;
+    padding: 50px 30px 10px 10px;
     font-size: 15px;
+    border-color: #DCDCDC;
+    border-bottom-style: solid;
+    border-width: 2px;
 }
 
-.minhaInscricao tr td hr {}
+.inscricao {
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: #FF0000;
+    border-radius: 4px;
+    border: #FF0000;
+    font-weight: bold;
+    margin-left: auto;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.inscricao:hover {
+    background-color: #FF0019;
+}
+
+.capa-inscricao {
+    margin-top: 30px;
+    width: 100%;
+    border: 80px solid #000000;
+    background-color: #000;
+}
+
+.semInscricao tr td {
+    padding: 80px 0 10px 0px;
+    font-size: 20px;
+}
