@@ -125,7 +125,7 @@ namespace SenaiVagas.WebApi.Controllers
                         return NotFound("Empresa não encontrado");
                     }
 
-                    idUsuario = (int) empresa.IdDadoEmpresa;
+                    idUsuario = (int) empresa.IdEmpresa;
                     claims = new[]
                     {
                         new Claim(JwtRegisteredClaimNames.Email, empresa.Email),
