@@ -1,0 +1,16 @@
+table {
+    padding: 70px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tituloInscricao tr th {
+    padding-right: 95px;
+    font-size: 16px;
+}
+
+.minhaInscricao tr td {
+    padding: 30px 0px 20px 20px;
+    font-size: 15px;
+}
+
+.minhaInscricao tr td hr {}

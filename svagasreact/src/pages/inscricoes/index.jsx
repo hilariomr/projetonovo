@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Footer from '../../components/footer'
 import Header from '../../components/header'
 import { buscarInscricoesPorCandidatoLogado, deletarInscricaoPorID } from '../../services/inscricaoService'
+import './style.css';
+import '../../assets/styles/global.css';
 
 function Inscricoes() {
     const [inscricoes, setInscricoes] = useState([])
@@ -11,7 +13,7 @@ function Inscricoes() {
     useEffect(() => {
         buscarInscricoesPorCandidatoLogado()
             .then(dados => dados.map(item => getInscricaoFormatada(item)))
-            .then(inscricoes => {setInscricoes(inscricoes)})
+            .then(inscricoes => { setInscricoes(inscricoes) })
             .catch(erro => {
                 alert('Ocorreu um erro ao buscar as vagas deste candidato')
                 console.log(erro)
@@ -37,8 +39,6 @@ function Inscricoes() {
         return {
             'idInscricao': dados.idInscricao,
             'titulo': dados.idVagaNavigation.tituloVaga,
-            'dataInicio': dados.idVagaNavigation.dataInicio,
-            'dataTermino': dados.idVagaNavigation.dataTermino,
             'salario': dados.idVagaNavigation.salario,
             'localTrabalho': dados.idVagaNavigation.localTrabalho,
             'tipoContratacao': dados.idVagaNavigation.tipoContratacao,
@@ -48,36 +48,35 @@ function Inscricoes() {
     return (
         <>
             <Header />
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Data de Inscrição</th>
-                            <th>Titulo da Vaga</th>
-                            <th>Data de Inicio</th>
-                            <th>Data de Termino</th>
-                            <th>Salário</th>
-                            <th>Local de Trabalho</th>
-                            <th>Tipo de Contratação</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    {console.log(inscricoes)}
-                    { inscricoes.length > 0 ? 
-                    <tbody>
-                        {inscricoes.map(inscricao => 
+            <table>
+                <thead className="tituloInscricao">
+                    <tr>
+                        <th>Titulo da Vaga</th>
+                        <th>Salário</th>
+                        <th>Local de Trabalho</th>
+                        <th>Tipo de Contratação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                {console.log(inscricoes)}
+                {inscricoes.length > 0 ?
+                    <tbody className="minhaInscricao">
+                        {inscricoes.map(inscricao =>
                             <tr key={inscricao.idInscricao}>
-                                <td>{inscricao.titulo}</td>
-                                <td>{inscricao.dataInicio}</td>
-                                <td>{inscricao.dataTermino}</td>
+                                <td>{inscricao.titulo}</td>                                
                                 <td>{inscricao.salario}</td>
                                 <td>{inscricao.localTrabalho}</td>
+                                <td>{inscricao.tipoContratacao}</td>
                                 <td><button type='button' onClick={() => removeInscricao(inscricao.idInscricao)}>Remover</button></td>
+                                <hr/>
                             </tr>
+                            
                         )}
+                        
                     </tbody>
                     : <tbody><tr><td colSpan='8'>Nenhuma vaga inscrita</td></tr></tbody>}
 
-                </table>
+            </table>
             <Footer />
         </>
     )
