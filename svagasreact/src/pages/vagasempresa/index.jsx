@@ -24,8 +24,11 @@ function VagasEmpresa() {
     return (
         <div>
             <Header />
-            
-            {vagas.map(item => <CardVaga item={item} empresaVisualizacao={true}/>)}
+            {vagas.length > 0 ?
+               <> {vagas.map(item => <CardVaga item={item} empresaVisualizacao={true}/>)} </>
+                : <h1>Não há vagas cadastradas</h1> 
+        }
+        
             <Footer />
         </div>
     )

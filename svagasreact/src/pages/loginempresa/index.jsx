@@ -34,6 +34,7 @@ function LoginEmpresa() {
       fetch('http://localhost:5000/api/Login', init)
         .then(resp => resp.json())
         .then(data => {
+          console.log(data)
           // Verifica se a propriedade token é diferente de indefinida (se a propriedade existe no retorno do json)
           if (data.token !== undefined) {
             localStorage.setItem('token-usuario', data.token)

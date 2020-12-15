@@ -14,6 +14,7 @@ function PerfilEmpresa() {
 
     useEffect(() => {
       let idEmpresa = localStorage.getItem("identificador-usuario")
+      
       buscarEmpresaService(idEmpresa).then(dados => {
         console.log(dados)
         setEmpresa(converteDados(dados))
